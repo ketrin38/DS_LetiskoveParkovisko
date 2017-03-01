@@ -1,29 +1,29 @@
-1.) Co je tarifa ?
+﻿# 1.) Co je tarifa ?
 	
 	Tarifa je cena za hodinu parkovania v konkretnej zone 
 
 
-2.) Zakaznik/firma ma preukaz, jeden preukaz ? na jedno vozidlo ? alebo ?
+# 2.) Zakaznik/firma ma preukaz, jeden preukaz ? na jedno vozidlo ? alebo ?
 
 	Firma ma jeden preukaz na ktory moze parkovat viacej vozidiel
 	Zakaznik (nie firma) ma preukaz ktory je viazany prave na jedno voidlo (SPZ) 
 
-3.) Evidencia zon a parkovacich miest s URCENIM ?
+# 3.) Evidencia zon a parkovacich miest s URCENIM ?
 	
 	Ake ma zona urcenie? osobne auto, autobus, ...
 
-4.) Historia a bezny zakaznici ? 
+# 4.) Historia a bezny zakaznici ? 
 
 	Tak ako sme to vymysleli, beni zakaznici budu jednym zakaznikom ktory ma soju vlastnu historiu
 
-5.) Preukaz je sam o sebe zlava, alebo si nesie info o zlavach na dany preukaz 
+# 5.) Preukaz je sam o sebe zlava, alebo si nesie info o zlavach na dany preukaz 
 
 	Na jeden preukaz moze byt v danom case prave jedna zlava
 
-6.) Evidencia kategori a cennikov, CO JE TO KATEGORIA ? 
+# 6.) Evidencia kategori a cennikov, CO JE TO KATEGORIA ? 
 
 	Kategoria znamena, ci je auto osobne, nakladne, atd...
 
-7.) Zona vie o sebe ake vozidla tam mozu byt ? teda osobne + bus, napr. :) 
+# 7.) Zona vie o sebe ake vozidla tam mozu byt ? teda osobne + bus, napr. :) 
 
 	Ano vie, uz spominane kategorie to maju nastarosti	
