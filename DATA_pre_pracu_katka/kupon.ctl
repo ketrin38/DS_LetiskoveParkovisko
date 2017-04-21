@@ -1,0 +1,9 @@
+LOAD DATA
+INFILE 'kupon.unl'
+INTO TABLE kupon
+FIELDS TERMINATED BY '|'
+(
+  ID_KUPON,
+  ID_ZLAVA
+)
+
