@@ -1,7 +1,7 @@
 LOAD DATA
-INFILE 'zona.unl'
+INFILE 'zona.csv'
 INTO TABLE zona
-FIELDS TERMINATED BY '|'
+FIELDS TERMINATED BY ';'
 (
   ID_ZONA,
   maximalna_doba,

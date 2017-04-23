@@ -1,5 +1,5 @@
 LOAD DATA
-INFILE 'vozidlo.unl'
+INFILE 'vozidlo.csv'
 INTO TABLE vozidlo
 FIELDS TERMINATED BY ';'
 (

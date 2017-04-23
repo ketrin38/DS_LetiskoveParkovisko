@@ -1,7 +1,7 @@
 LOAD DATA
-INFILE 'parkovacie_miesto.unl'
+INFILE 'parkovacie_miesto.csv'
 INTO TABLE parkovacie_miesto
-FIELDS TERMINATED BY '|'
+FIELDS TERMINATED BY ';'
 (
   ID_MIESTA,
   ID_ZONA

@@ -1,5 +1,5 @@
 LOAD DATA
-INFILE 'tarifa.unl'
+INFILE 'tarifa.csv'
 INTO TABLE tarifa
 FIELDS TERMINATED BY ';'
 (
