@@ -1,0 +1,13 @@
+LOAD DATA
+INFILE 'historia_parkovania.csv'
+INTO TABLE historia_parkovania
+FIELDS TERMINATED BY ';'
+(
+  ID_HISTORIA,
+  ID_MIESTA,
+  SPZ DATE,
+  ID_REZERVACIA_PARK_MIESTO,
+  ODKEDY,
+  DOKEDY
+)
+
