@@ -8,6 +8,6 @@ FIELDS TERMINATED BY '|'
   ID_KUPON,
   ZACIATOK DATE 'MM/DD/YYYY',
   STAV,
-  DLZKA
+  DLZKA INTERVAL 'day to secound'
 )
 

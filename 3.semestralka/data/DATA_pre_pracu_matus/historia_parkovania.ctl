@@ -1,13 +1,13 @@
 LOAD DATA
-INFILE 'historia_parkovania.csv'
+INFILE 'historia_parkovania_upr.csv'
 INTO TABLE historia_parkovania
 FIELDS TERMINATED BY ';'
 (
   ID_HISTORIA,
   ID_MIESTA,
-  SPZ DATE,
+  SPZ,
   ID_REZERVACIA_PARK_MIESTO,
-  ODKEDY,
-  DOKEDY
+  ODKEDY DATE 'YYYY.MM.DD',
+  DOKEDY DATE 'YYYY.MM.DD'
 )
 

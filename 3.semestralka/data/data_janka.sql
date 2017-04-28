@@ -330,14 +330,3 @@ VALUES (6, '12.3.2017', 7);
 
 INSERT INTO platba
 VALUES (7, '7.12.2016', 3);
-
-
-
-
-
-
-
-
-
-
-
