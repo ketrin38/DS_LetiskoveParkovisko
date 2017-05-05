@@ -239,28 +239,28 @@ VALUES (6, 3);
 
 -- rezervacia
 INSERT INTO rezervacia
-VALUES (301, 1, 1, to_date('07.12.2016','DD.MM.YYYY'), 'SCH', INTERvAL '1' hour);
+VALUES (301, 1, 1, to_date('07.12.2016 20:30:14','DD.MM.YYYY HH24:MI:SS'), 'SCH', INTERvAL '1' hour);
 
 INSERT INTO rezervacia
-VALUES (302, 2, 2, to_date('08.08.2017','DD.MM.YYYY'), 'NES',INTERvAL '4' hour);
+VALUES (302, 2, 2, to_date('08.08.2017 15:12:01','DD.MM.YYYY HH24:MI:SS'), 'NES',INTERvAL '4' hour);
 
 INSERT INTO rezervacia
-VALUES (303, 3, 3, to_date('20.04.2017','DD.MM.YYYY'), 'ZRU',INTERVAL  '3' hour);
+VALUES (303, 3, 3, to_date('20.04.2017 17:45:00','DD.MM.YYYY HH24:MI:SS'), 'ZRU',INTERVAL  '3' hour);
 
 INSERT INTO rezervacia(id_rezervacia, id_preukaz, zaciatok, stav, dlzka)
-VALUES (304, 3, to_date('20.07.2017','DD.MM.YYYY'), 'NES', INTERVAL '5' hour);
+VALUES (304, 3, to_date('20.07.2017 21:19:01', 'DD.MM.YYYY HH24:MI:SS'), 'NES', INTERVAL '5' hour);
 
 INSERT INTO rezervacia(id_rezervacia, id_preukaz, zaciatok, stav, dlzka)
-VALUES (305, 3, to_date('17.08.2017','DD.MM.YYYY'), 'NES', INTERVAL '7' hour);
+VALUES (305, 3, to_date('17.08.2017 15:25:13','DD.MM.YYYY HH24:MI:SS'), 'NES', INTERVAL '7' hour);
 
 INSERT INTO rezervacia(id_rezervacia, id_preukaz, zaciatok, stav, dlzka)
-VALUES (306, 2, to_date('15.04.2017','DD.MM.YYYY'), 'ZRU', INTERVAL '2' hour);
+VALUES (306, 2, to_date('15.04.2017 12:14:00','DD.MM.YYYY HH24:MI:SS'), 'ZRU', INTERVAL '2' hour);
 
 INSERT INTO rezervacia
-VALUES (307, 1, 4, to_date('10.09.2017','DD.MM.YYYY'), 'ZRU',INTERVAL '8' hour);
+VALUES (307, 1, 4, to_date('10.09.2017 22:00:15','DD.MM.YYYY HH24:MI:SS'), 'ZRU',INTERVAL '8' hour);
 
 INSERT INTO rezervacia
-VALUES (308, 3, 6, to_date('12.03.2017','DD.MM.YYYY'), 'SCH',INTERVAL '1' hour);
+VALUES (308, 3, 6, to_date('12.03.2017 03:01:05','DD.MM.YYYY HH24:MI:SS'), 'SCH',INTERVAL '1' hour);
 commit;
 -- rezervacia park miesta
 INSERT INTO rezervacia_park_miesta
@@ -289,25 +289,25 @@ VALUES (308, 8, 17);
 commit;
 -- historia parkovania
 INSERT INTO historia_parkovania(id_historia, id_miesta, spz, odkedy)
-VALUES (301, 5, 'ZA123AA', to_date('01.04.2017','DD.MM.YYYY'));
+VALUES (301, 5, 'ZA123AA', to_date('01.04.2017 03:05:11','DD.MM.YYYY HH24:MI:SS'));
 
 INSERT INTO historia_parkovania(id_historia, id_miesta, spz, odkedy)
-VALUES (302, 5, 'ZA123AA', to_date('17.04.2017','DD.MM.YYYY'));
+VALUES (302, 5, 'ZA123AA', to_date('17.04.2017 12:12:54','DD.MM.YYYY HH24:MI:SS'));
 
 INSERT INTO historia_parkovania(id_historia, id_miesta, spz, odkedy)
-VALUES (303, 18, 'BA456AB', to_date('10.03.2017','DD.MM.YYYY'));
+VALUES (303, 18, 'BA456AB', to_date('10.03.2017 17:54:32','DD.MM.YYYY HH24:MI:SS'));
 
 INSERT INTO historia_parkovania(id_historia, id_miesta, spz, odkedy)
-VALUES (304, 16, 'BA456AD', to_date('11.03.2017','DD.MM.YYYY'));
+VALUES (304, 16, 'BA456AD', to_date('11.03.2017 10:35:14','DD.MM.YYYY HH24:MI:SS'));
 
 INSERT INTO historia_parkovania(id_historia, id_miesta, spz, odkedy)
-VALUES (305, 16, 'BA456AD', to_date('12.03.2017','DD.MM.YYYY'));
+VALUES (305, 16, 'BA456AD', to_date('12.03.2017 14:15:51','DD.MM.YYYY HH24:MI:SS'));
 
 INSERT INTO historia_parkovania(id_historia, id_miesta, spz, id_rezervacia_park_miesto, odkedy)
-VALUES (306, 17, 'BA456AC', 8, to_date('12.03.2017','DD.MM.YYYY'));
+VALUES (306, 17, 'BA456AC', 8, to_date('12.03.2017 17:54:14','DD.MM.YYYY HH24:MI:SS'));
 
 INSERT INTO historia_parkovania(id_historia, id_miesta, spz, id_rezervacia_park_miesto, odkedy)
-VALUES (307, 1, 'ZA123AA', 1, to_date('07.12.2016','DD.MM.YYYY'));
+VALUES (307, 1, 'ZA123AA', 1, to_date('07.12.2016 12:54:32','DD.MM.YYYY HH24:MI:SS'));
 
 
 -- platba
