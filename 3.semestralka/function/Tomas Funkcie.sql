@@ -5,18 +5,30 @@ create or replace FUNCTION get_cena_jednotkova
   (p_spz IN VOZIDLO.SPZ%TYPE, p_odkedy IN DATE, p_dokedy IN DATE)
 RETURN integer
   IS 
+   h_dokedy date;
    r_cena integer;
    h_miesto integer;
    h_preukaz integer;
    h_rezervacia integer;
    h_pocet integer;
 BEGIN
+  h_dokedy := p_dokedy ;
+  SELECT count(*) into h_pocet
+  FROM historia_parkovania
+      WHERE spz = p_spz
+        AND dokedy is NOT NULL
+          AND odkedy < sysdate;
+          
+  IF (h_pocet = 0) THEN
+    return 0;
+  END IF;
+   
   SELECT id_miesta, id_rezervacia_park_miesto
     INTO h_miesto, h_rezervacia FROM historia_parkovania
       WHERE spz = p_spz
-        AND dokedy = p_dokedy
-          AND odkedy = p_odkedy;
- 
+        AND dokedy > p_odkedy
+        AND odkedy < h_dokedy;
+          
   r_cena := GET_CENA_PARKOVANIA(p_odkedy, p_dokedy, h_miesto);
   
   return r_cena;
@@ -74,8 +86,9 @@ RETURN integer
    r_cena integer;
    h_odkedy date;
    h_miesto integer;
+   h_historia integer;
    h_preukaz integer;
-   h_rezervacia integer;
+   h_rezervacia integer; 
    h_pocet integer;
 BEGIN
   SELECT count(*) into h_pocet
@@ -87,9 +100,9 @@ BEGIN
   IF (h_pocet = 0) THEN
     return 0;
   END IF;
-
-  SELECT id_miesta, odkedy, id_rezervacia_park_miesto
-    INTO h_miesto, h_odkedy, h_rezervacia FROM historia_parkovania
+ 
+  SELECT id_miesta, odkedy, id_rezervacia_park_miesto, id_historia
+    INTO h_miesto, h_odkedy, h_rezervacia, h_historia FROM historia_parkovania
       WHERE spz = p_spz
         AND dokedy is NULL
           AND odkedy < sysdate; 
@@ -116,10 +129,10 @@ BEGIN
       r_cena := r_cena - (r_cena * (GET_ZLAVA_KUPON(h_rezervacia, h_odkedy) / 100));
     END IF;
   END IF;
-
+  
+  PROCEDURE_VLOZ_PLATBU(h_historia, r_cena);
   return r_cena;
 END;
-
 
 --###################################################################################################################################
 -- Vrati zakladnu sumu za parkovanie. Bez odpocitania vsetkych zliav
