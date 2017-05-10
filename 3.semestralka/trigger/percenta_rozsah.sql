@@ -1,0 +1,14 @@
+--trigger aby sa nezadali percentá iné ako od 0 po 100
+CREATE OR REPLACE TRIGGER CHECK_NA_PERCENTA
+BEFORE INSERT ON ZLAVA
+DECLARE PERCENTO INTEGER;
+BEGIN
+    SELECT :NEW.PERCENTO INTO PERCENTO
+      FROM DUAL;
+    IF (PERCENTO <= 0 OR PERCENTO > 100)
+        THEN RAISE_APPLICATION_ERROR(-20001, 'Vo vstupe sa nachádza neplatný rozsah pre percentá (0-100)'); 
+    END IF;
+END;
+/ 
+
+SHOW ERROR;
