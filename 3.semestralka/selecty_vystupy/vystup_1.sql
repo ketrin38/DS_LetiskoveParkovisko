@@ -51,27 +51,3 @@ SHOW ERRORS;
 VARIABLE V_VOLNE_MIESTA VARCHAR2(30);                          
 EXECUTE p_volne_miesta('01.01.2001', '01.01.2018', 'O', :V_VOLNE_MIESTA);
 PRINT V_VOLNE_MIESTA;
-
--- 2
-
--- 3
-
--- 4 REPORT - PREHLAD PRIJIMOV
-
--- 5 REPORT STATISTIKA - OBSADENOST
-
--- 6 REPORT - OBSADENOST_VYVIN
-
--- 7
-SELECT spz, id_miesta
-  FROM vozidlo
-  JOIN historia_parkovania
- USING (spz)
- JOIN parkovacie_miesto
- USING (id_miesta)
- JOIN zona
- USING (id_zona)
- WHERE TO_DATE(sysdate + (maximalna_doba/24),'DD.MM.YYYY HH24:MI:SS') > nvl(dokedy, sysdate);
-
--- 8
- 
