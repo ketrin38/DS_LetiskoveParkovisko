@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <displays>
-<display id="f3f7f882-015b-1000-8002-c0a889f3a9e6" type="" style="Chart" enable="true">
+<display id="f3f7f882-015b-1000-8002-c0a889f3a9e6" type="" style="Table" enable="true">
 	<name><![CDATA[pocet vozidiel klientov]]></name>
 	<description><![CDATA[]]></description>
 	<tooltip><![CDATA[]]></tooltip>
 	<drillclass><![CDATA[]]></drillclass>
 	<CustomValues>
-		<TYPE><![CDATA[BAR_VERT_CLUST]]></TYPE>
+		<TYPE><![CDATA[horizontal]]></TYPE>
 	</CustomValues>
 	<query>
-		<sql><![CDATA[select 'pocet vozidiel',id_zakaznik,count(spz)
+		<sql><![CDATA[select meno,priezvisko,count(spz)
 from zakaznik join preukaz using(id_zakaznik) join vozidlo using(id_preukaz)
-group by id_zakaznik
-having count(*)>1]]></sql>
+group by id_zakaznik,meno,priezvisko]]></sql>
 	</query>
 		<pdf version="VERSION_1_7" compression="CONTENT">
 			<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -26,7 +25,8 @@ having count(*)>1]]></sql>
 			<header enable="false" generatedate="false">
 				<data>
 				
-				null								</data>
+				
+				null												</data>
 			</header>
 			<footer enable="false" generatedate="false">
 				<data value="null" />
