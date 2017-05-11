@@ -24,8 +24,8 @@ CREATE OR REPLACE PROCEDURE p_volne_miesta
      V_VOLNE_MIESTA OUT VARCHAR2)
 IS
 BEGIN 
-    SELECT ID_MIESTA
-      INTO V_VOLNE_MIESTA
+dbms_output.put_line('Zoznam vo¾ných parkovacích miest');
+   for a in (SELECT ID_MIESTA
       FROM PARKOVACIE_MIESTO PM
       JOIN ZONA 
      USING (ID_ZONA)
@@ -41,13 +41,19 @@ BEGIN
                     AND  NVL(DOKEDY,sysdate) >= NVL(PAR_DOKEDY,sysdate)
                     )
                 ) 
-       AND typ_vozidlo = PAR_TYP_VOZIDLO;
+       AND typ_vozidlo = PAR_TYP_VOZIDLO
+       
+       )
+       loop
+        dbms_output.put_line(a.id_miesta);
+        end loop;
+      
 
 END p_volne_miesta;
 /
     
 SHOW ERRORS;                         
-   
+   SET SERVEROUTPUT ON;
 VARIABLE V_VOLNE_MIESTA VARCHAR2(30);                          
 EXECUTE p_volne_miesta('01.01.2001', '01.01.2018', 'O', :V_VOLNE_MIESTA);
 PRINT V_VOLNE_MIESTA;
