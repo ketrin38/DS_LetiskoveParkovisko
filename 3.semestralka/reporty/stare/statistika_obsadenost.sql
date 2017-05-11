@@ -27,7 +27,7 @@
 		<FOOTNOTE_ALIGNMENT><![CDATA[LEFT]]></FOOTNOTE_ALIGNMENT>
 	</CustomValues>
 	<query>
-		<sql><![CDATA[SELECT '' AS STATISTIKA_OBSADENOST, EXTRACT(MONTH FROM odkedy)AS MESIAC, COUNT(*) AS POCET
+		<sql><![CDATA[SELECT '' AS VOZIDLO, EXTRACT(MONTH FROM odkedy)AS MESIAC, COUNT(*) AS POCET
       FROM HISTORIA_PARKOVANIA
 INNER JOIN PARKOVACIE_MIESTO
      USING (ID_MIESTA)
@@ -75,8 +75,7 @@ INNER JOIN ZAKAZNIK
 			<table font="null" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
 			<header enable="false" generatedate="false">
 				<data>
-				
-				null								</data>
+				null				</data>
 			</header>
 			<footer enable="false" generatedate="false">
 				<data value="null" />

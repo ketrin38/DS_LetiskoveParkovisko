@@ -1,0 +1,11 @@
+LOAD DATA
+INFILE 'zlava_na_preukaz.unl'
+INTO TABLE zlava_na_preukaz
+FIELDS TERMINATED BY '|'
+(
+  ID_PREUKAZ,
+  ID_ZLAVA,
+  ZACIATOK_PLATNOSTI DATE 'MM/DD/YYYY',
+  DOKEDY DATE 'MM/DD/YYYY'
+)
+

@@ -1,0 +1,11 @@
+LOAD DATA
+INFILE 'zakaznik.unl'
+INTO TABLE zakaznik
+FIELDS TERMINATED BY '|'
+(
+  ID_ZAKAZNIK,
+  MENO,
+  PRIEZVISKO,
+  TYP
+)
+
